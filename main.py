@@ -30,7 +30,7 @@ def main(run_length: int, total_terms: int, output_file: str, max_file_size: int
         
         pattern = marching_doubler.generate_pattern()
 
-        OutputManager.write_to_file(pattern, output_file, marching_doubler.terms_length) 
+        OutputManager.write_to_file(pattern, output_file, marching_doubler.terms_length, marching_doubler.run_length) 
     except Exception as e:
         print(f'Exception while generating pattern {e}')
 

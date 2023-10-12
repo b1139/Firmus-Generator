@@ -13,7 +13,7 @@ def test_writer(tmp_path):
     output_file = tmp_path / "output.txt"
     
     # Act
-    OutputManager.write_to_file(pattern, output_file, md.terms_length)
+    OutputManager.write_to_file(pattern, output_file, md.terms_length, md.run_length)
     
     # Assert
     assert output_file.read_text() == "1,1,2,3,"
@@ -28,7 +28,7 @@ def test_write_file_term_len(tmp_path):
     output_file = tmp_path / "output.txt"
     
     # Act
-    OutputManager.write_to_file(pattern, output_file, md.terms_length)
+    OutputManager.write_to_file(pattern, output_file, md.terms_length, md.run_length)
     
     # Assert
     # -1 an ending comma

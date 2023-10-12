@@ -85,11 +85,11 @@ class MarchingDoubler:
                 
                 if num == 0:
                     pass
-                elif idx == num:
-                    term += 1
+                elif idx >= num:
+                    term = num + 1
                     # Make sure always previous term is adjacent
                     # e.g(previous) 1,2,2,3 => (Current) 1,1,3,3 => (Modified) 1,2,3,3
-                    if (num+1) - previous != 1:
+                    if term - previous != 1:
                         prev_modified = previous + 1
                 else:
                     term = num
@@ -97,8 +97,8 @@ class MarchingDoubler:
                 previous = term
                 
                 yield prev_modified, term
+                
             
             # Reduce term length each time it runs for 
             terms_length -= run_length
             idx += 1
-
